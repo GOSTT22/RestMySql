@@ -6,9 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var positionsRouter = require('./routes/positions');
-var departamentRouter = require('./routes/departament');
-var workersRouter = require('./routes/workers');
+var clientsRouter = require('./routes/clients');
+var creditRouter = require('./routes/credit');
+var investRouter = require('./routes/invest');
 
 var app = express();
 // app.listen(4000, ()=>{console.log("My app on port 4000")});
@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/positions', positionsRouter);
-app.use('/departament', departamentRouter);
-app.use('/workers', workersRouter);
+app.use('/clients', clientsRouter);
+app.use('/credit', creditRouter);
+app.use('/invest', investRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
